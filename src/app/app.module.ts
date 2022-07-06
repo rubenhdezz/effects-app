@@ -6,6 +6,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
 import { UsuariosModule } from './usuarios/usuarios.module';
+import { StoreModule } from '@ngrx/store';
+import { appReducers } from './store/app.reducer';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -16,7 +20,8 @@ import { UsuariosModule } from './usuarios/usuarios.module';
     AppRoutingModule,
     HttpClientModule,
     UsuariosModule,
-    SharedModule
+    SharedModule,
+    StoreModule.forRoot( appReducers )
   ],
   providers: [],
   bootstrap: [AppComponent]
